@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF2D78;
+  --secondary: #FF8FAB;
+  --background: #FFF0F3;
+  --dark: #1A0A10;
+  --surface: #FFE4EC;
+  --accent: #C9184A;
+  --neutral: #6D3A4A;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--dark);
+  font-family: var(--font-jakarta), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Gradient text utility ── */
+.gradient-text {
+  background: linear-gradient(135deg, #FF2D78 0%, #C9184A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-soft {
+  background: linear-gradient(135deg, #FF2D78 0%, #FF8FAB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(255, 45, 120, 0.2);
+  color: var(--dark);
+}
+
+/* ── Pink input focus ── */
+.input-pink:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 45, 120, 0.15);
+  outline: none;
+}
+
+/* ── Glassmorphism card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 143, 171, 0.2);
+}
+
+/* ── Dark card on dark bg ── */
+.dark-card {
+  background: #2D1520;
+  border-top: 3px solid var(--primary);
+}
+.dark-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(255, 45, 120, 0.3), 0 16px 40px rgba(255, 45, 120, 0.15);
+}
